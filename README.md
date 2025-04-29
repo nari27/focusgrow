@@ -1,12 +1,15 @@
-#FocusGrow
+# FocusGrow (구현중)
+
 집중 시간 관리와 식물 성장 게임 요소를 결합한 웹 애플리케이션입니다.
 
-FocusGrow는 "Focus(집중)"와 "Grow(성장)"를 결합한 이름으로, 사용자가 집중하는 시간 동안 식물이 성장하는 컨셉을 기반으로 합니다.
+FocusGrow는 "Focus(집중)" + "Grow(성장)" 을 결합한 이름으로, 사용자가 집중하는 시간 동안 식물이 성장하는 컨셉을 기반으로 합니다.
+
 집중 타이머를 통해 몰입한 시간을 시각적으로 확인하고, 성취감을 느끼며 지속적인 자기 개발을 돕는 것을 목표로 합니다.
 
 ---
 
-##주요 기능
+## 주요 기능
+
 - 집중 타이머: 사용자가 설정한 시간 동안 타이머를 작동시켜 집중 상태를 유지할 수 있습니다.
 
 - 집중 기록 저장: 집중 완료 후 해당 기록이 저장되어 히스토리를 확인할 수 있습니다.
@@ -19,37 +22,45 @@ FocusGrow는 "Focus(집중)"와 "Grow(성장)"를 결합한 이름으로, 사용
 
 - JWT 로그인/회원가입: 사용자의 데이터를 보호하고, 개인화된 경험을 제공합니다.
 
-##사용 기술 (Tech Stack)
-- 프론트엔드
-React (Vite 기반 프로젝트 세팅)
+<br>
 
-TypeScript
+## 기술 스택
 
-React Query (서버 상태 관리)
+### Frontend
 
-Axios (API 통신)
+- React (Vite 기반 프로젝트 세팅)
 
-Tailwind CSS (스타일링)
+- TypeScript
 
-- 백엔드
-Spring Boot (Kotlin 기반)
+- React Query (서버 상태 관리)
 
-JPA (Hibernate) (ORM)
+- Axios (API 통신)
 
-MySQL (RDBMS)
-
-JWT (로그인 인증)
+- Tailwind CSS (스타일링)
 
 
-##프로젝트 구조
+### Backend
+- Spring Boot (Kotlin 기반)
+
+- JPA (Hibernate) (ORM)
+
+- MySQL (RDBMS)
+
+- JWT (로그인 인증)
+
+<br>
+
+## 프로젝트 구조
 
 FocusGrow
+
 ├── focusgrow-frontend (React + Vite)
+
 └── focusgrow-backend (Spring Boot + Kotlin + JPA)
 
-- 프론트엔드와 백엔드를 분리하여 관리하는 멀티 레포지토리 구조입니다.
+ - 프론트엔드와 백엔드를 분리하여 관리하는 멀티 레포지토리 구조입니다.
 
-- RESTful API를 통해 프론트엔드와 백엔드가 통신합니다.
+ - RESTful API를 통해 프론트엔드와 백엔드가 통신합니다.
 
 ---
 
