@@ -1,4 +1,4 @@
-package com.focusgrow.backend.domain.entity;
+package com.focusgrow.backend.entity;
 
 public enum TimerStatus {
     IN_PROGRESS,

@@ -1,16 +1,16 @@
-package com.focusgrow.backend.domain.entity;
+package com.focusgrow.backend.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "plant")
+@Table(name = "level")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Plant {
+public class Level {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,13 +20,11 @@ public class Plant {
     @JoinColumn(name = "user_id")
     private User user;
 
-    private String name;
+    @Column(nullable = false)
+    private Integer level;
 
-    @Column(name = "growth_level")
-    private Integer growthLevel = 0;
-
-    @Column(name = "growth_duration")
-    private Integer growthDuration = 0;
+    @Column(name = "experience_points")
+    private Integer experiencePoints = 0;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt = LocalDateTime.now();

@@ -1,16 +1,16 @@
-package com.focusgrow.backend.domain.entity;
+package com.focusgrow.backend.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "timer")
+@Table(name = "plant")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Timer {
+public class Plant {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,17 +20,13 @@ public class Timer {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @Column(name = "start_time", nullable = false)
-    private LocalDateTime startTime;
+    private String name;
 
-    @Column(name = "end_time", nullable = false)
-    private LocalDateTime endTime;
+    @Column(name = "growth_level")
+    private Integer growthLevel = 0;
 
-    @Column(name = "focus_duration", nullable = false)
-    private Integer focusDuration;
-
-    @Enumerated(EnumType.STRING)
-    private TimerStatus status = TimerStatus.IN_PROGRESS;
+    @Column(name = "growth_duration")
+    private Integer growthDuration = 0;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt = LocalDateTime.now();

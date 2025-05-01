@@ -1,4 +1,4 @@
-package com.focusgrow.backend.domain.entity;
+package com.focusgrow.backend.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
