@@ -9,5 +9,5 @@ import java.util.List;
 public interface FocusRecordService {
     FocusLogResponse addFocusRecord(FocusLogRequest focusLogRequest);
     List<FocusLogResponse> getFocusRecordsByDate(LocalDate date);
-    Object getFocusStats(String period);
+//    Object getFocusStats(String period);
 }

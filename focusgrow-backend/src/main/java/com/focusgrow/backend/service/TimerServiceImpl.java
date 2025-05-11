@@ -1,4 +1,4 @@
-package com.focusgrow.backend.service.impl;
+package com.focusgrow.backend.service;
 
 import com.focusgrow.backend.dto.TimerRequest;
 import com.focusgrow.backend.dto.TimerResponse;
@@ -10,6 +10,7 @@ import com.focusgrow.backend.repository.UserRepository;
 import com.focusgrow.backend.service.TimerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Duration;
 import java.util.Optional;
@@ -22,6 +23,7 @@ public class TimerServiceImpl implements TimerService {
     private final UserRepository userRepository;
 
     @Override
+    @Transactional
     public TimerResponse startTimer(TimerRequest request) {
         User user = userRepository.findById(request.getUserId())
                 .orElseThrow(() -> new RuntimeException("User not found"));
@@ -43,6 +45,7 @@ public class TimerServiceImpl implements TimerService {
     }
 
     @Override
+    @Transactional
     public TimerResponse stopTimer(TimerRequest request) {
         Timer timer = timerRepository.findTopByUserIdAndStatusOrderByCreatedAtDesc(
                         request.getUserId(), TimerStatus.IN_PROGRESS)
@@ -65,6 +68,7 @@ public class TimerServiceImpl implements TimerService {
     }
 
     @Override
+    @Transactional
     public TimerResponse getCurrentTimerStatus(Integer userId) {
         Optional<Timer> optionalTimer = timerRepository.findTopByUserIdAndStatusOrderByCreatedAtDesc(
                 userId, TimerStatus.IN_PROGRESS);

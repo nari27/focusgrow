@@ -32,10 +32,10 @@ public class FocusRecordController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    // 집중 시간 통계 (주간/월간)
-    @GetMapping("/stats")
-    public ResponseEntity<Object> getFocusStats(@RequestParam String period) {
-        Object response = focusRecordService.getFocusStats(period);
-        return new ResponseEntity<>(response, HttpStatus.OK);
-    }
+//    // 집중 시간 통계 (주간/월간)
+//    @GetMapping("/stats")
+//    public ResponseEntity<Object> getFocusStats(@RequestParam String period) {
+//        Object response = focusRecordService.getFocusStats(period);
+//        return new ResponseEntity<>(response, HttpStatus.OK);
+//    }
 }

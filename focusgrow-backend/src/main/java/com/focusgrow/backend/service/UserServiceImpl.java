@@ -33,14 +33,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserResponse getMyInfo(Integer userId) {
-        User user = userRepository.findById(userId)
+    public UserResponse getMyInfo(Integer id) {
+        User user = userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("User not found"));
         return toResponse(user);
     }
 
     @Override
-    public int getTotalFocusTime(Integer userId) {
+    public int getTotalFocusTime(Integer id) {
         // 실제 구현은 FocusRecord 테이블을 조회해서 총합 구해야 함
         return 0;
     }

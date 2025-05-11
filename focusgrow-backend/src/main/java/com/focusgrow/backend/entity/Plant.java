@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "plant")
-@Getter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -23,14 +23,18 @@ public class Plant {
     private String name;
 
     @Column(name = "growth_level")
+    @Builder.Default
     private Integer growthLevel = 0;
 
     @Column(name = "growth_duration")
+    @Builder.Default
     private Integer growthDuration = 0;
 
     @Column(name = "created_at")
+    @Builder.Default
     private LocalDateTime createdAt = LocalDateTime.now();
 
     @Column(name = "updated_at")
+    @Builder.Default
     private LocalDateTime updatedAt = LocalDateTime.now();
 }

@@ -25,7 +25,7 @@ public class TimerController {
     }
 
     @GetMapping("/status")
-    public ResponseEntity<TimerResponse> getCurrentTimerStatus(@RequestParam Integer userId) {
+    public ResponseEntity<TimerResponse> getCurrentTimerStatus(@PathVariable Integer userId) {
         return ResponseEntity.ok(timerService.getCurrentTimerStatus(userId));
     }
 }

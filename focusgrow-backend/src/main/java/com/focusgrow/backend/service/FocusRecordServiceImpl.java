@@ -68,15 +68,15 @@ public class FocusRecordServiceImpl implements FocusRecordService {
                 .collect(Collectors.toList());
     }
 
-    // 집중 시간 통계 (주간/월간)
-    @Override
-    public Object getFocusStats(String period) {
-        // 간단히 예시로 주간 통계
-        if ("weekly".equalsIgnoreCase(period)) {
-            return focusRecordRepository.getWeeklyStats();
-        } else if ("monthly".equalsIgnoreCase(period)) {
-            return focusRecordRepository.getMonthlyStats();
-        }
-        throw new IllegalArgumentException("Invalid period");
-    }
+//    // 집중 시간 통계 (주간/월간)
+//    @Override
+//    public Object getFocusStats(String period) {
+//        // 간단히 예시로 주간 통계
+//        if ("weekly".equalsIgnoreCase(period)) {
+//            return focusRecordRepository.getWeeklyStats();
+//        } else if ("monthly".equalsIgnoreCase(period)) {
+//            return focusRecordRepository.getMonthlyStats();
+//        }
+//        throw new IllegalArgumentException("Invalid period");
+//    }
 }

@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "badge")
-@Getter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -24,5 +24,6 @@ public class Badge {
     private String badgeType;
 
     @Column(name = "earned_at")
+    @Builder.Default
     private LocalDateTime earnedAt = LocalDateTime.now();
 }
