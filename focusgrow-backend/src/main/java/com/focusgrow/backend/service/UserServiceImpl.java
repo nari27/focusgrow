@@ -6,6 +6,7 @@ import com.focusgrow.backend.repository.UserRepository;
 import com.focusgrow.backend.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import com.focusgrow.backend.exception.ConflictException;
 
 @Service
 @RequiredArgsConstructor
@@ -15,6 +16,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResponse register(UserRequest request) {
+        if (userRepository.existsByEmail(request.getEmail())) {
+            throw new ConflictException("이미 사용 중인 이메일입니다.");
+        }
+
         User user = User.builder()
                 .username(request.getUsername())
                 .email(request.getEmail())
