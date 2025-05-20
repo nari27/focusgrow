@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface LevelService {
     List<LevelResponse> getAllLevels();
+    int calculateUserLevel(Integer userId);
+
 }

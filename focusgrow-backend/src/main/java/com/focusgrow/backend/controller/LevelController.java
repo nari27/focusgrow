@@ -24,4 +24,11 @@ public class LevelController {
         List<LevelResponse> levels = levelService.getAllLevels();
         return new ResponseEntity<>(levels, HttpStatus.OK);
     }
+
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<Integer> getUserLevel(@PathVariable Integer userId) {
+        int level = levelService.calculateUserLevel(userId);
+        return new ResponseEntity<>(level, HttpStatus.OK);
+    }
+
 }

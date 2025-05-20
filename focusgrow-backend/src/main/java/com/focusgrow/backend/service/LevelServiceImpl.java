@@ -26,4 +26,14 @@ public class LevelServiceImpl implements LevelService {
                         .build())
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public int calculateUserLevel(Integer userId) {
+        List<FocusRecord> records = focusRecordRepository.findByUserId(userId);
+        int totalSeconds = records.stream()
+                .mapToInt(FocusRecord::getFocusTime)
+                .sum();
+        return totalSeconds / 1800; // 예: 30분마다 1레벨 상승
+    }
+
 }

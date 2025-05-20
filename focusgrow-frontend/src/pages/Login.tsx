@@ -9,8 +9,20 @@ export default function Login() {
   const [password, setPassword] = useState('');
 
   const handleLogin = async () => {
+    console.log('로그인 시도');
     try {
-      await login(email, password);
+      const response = await login(email, password); // ⬅️ 로그인 요청 및 응답 받기
+      console.log(response.data);
+
+      // ✅ 응답에서 유저 정보 꺼내기
+      const { id, username, email: userEmail } = response.data;
+
+      // ✅ 세션 스토리지에 저장 (로그인 상태 유지 목적)
+      sessionStorage.setItem('id', id.toString());
+      sessionStorage.setItem('username', username);
+      sessionStorage.setItem('email', userEmail);
+      console.log(id, username, userEmail); // 값이 다 잘 찍히는지 확인
+
       alert('로그인 성공!');
       navigate('/');
     } catch (error) {
@@ -24,11 +36,14 @@ export default function Login() {
       <h2 className={styles.heading}>로그인</h2>
       <input
         type="email"
+        name="email" // ✅ name 속성 추가!
         placeholder="이메일"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         className={styles.input}
+        autoComplete="email" // ✅ 브라우저 자동완성 유도
       />
+
       <input
         type="password"
         placeholder="비밀번호"
