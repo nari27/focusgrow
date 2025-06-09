@@ -1,0 +1,88 @@
+/* 배경 및 타이머 영역 */
+.timer-wrapper {
+  min-height: 100vh;
+  background-color: #fdf6ec;
+  text-align: center;
+  color: #2e4b27;
+  padding: 2.5rem;
+}
+
+/* 통계 카드 */
+.focus-stat-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 0.75rem;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 타이머 진행 바 */
+.progress-bar {
+  width: 66%;
+  margin: 0 auto;
+  height: 0.75rem;
+  border-radius: 9999px;
+  background-color: #d3f1cb;
+  overflow: hidden;
+}
+
+.progress-bar-inner {
+  height: 100%;
+  background-color: #4caf50;
+  transition: width 0.3s ease-in-out;
+}
+
+/* 버튼들 */
+.btn-start {
+  background-color: #276749;
+  color: white;
+  border-radius: 9999px;
+  padding: 0.5rem 2rem;
+  font-size: 1.125rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-reset {
+  background-color: #fff4d5;
+  color: #2e4b27;
+  border-radius: 9999px;
+  padding: 0.5rem 2rem;
+  font-size: 1.125rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.plant-img {
+  transition: transform 0.5s ease-in-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+body {
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .progress-bar {
+    width: 90%;
+  }
+
+  .btn-start,
+  .btn-reset {
+    width: 100%;
+    font-size: 1rem;
+  }
+}

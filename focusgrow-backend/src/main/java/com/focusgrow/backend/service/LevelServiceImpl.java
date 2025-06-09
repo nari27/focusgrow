@@ -1,7 +1,9 @@
 package com.focusgrow.backend.service;
 
 import com.focusgrow.backend.dto.LevelResponse;
+import com.focusgrow.backend.entity.FocusRecord;
 import com.focusgrow.backend.entity.Level;
+import com.focusgrow.backend.repository.FocusRecordRepository;
 import com.focusgrow.backend.repository.LevelRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,7 @@ import java.util.stream.Collectors;
 public class LevelServiceImpl implements LevelService {
 
     private final LevelRepository levelRepository;
+    private final FocusRecordRepository focusRecordRepository;
 
     // 레벨 기준 리스트 조회
     @Override
