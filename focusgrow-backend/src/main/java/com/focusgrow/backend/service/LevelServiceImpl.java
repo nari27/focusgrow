@@ -32,7 +32,7 @@ public class LevelServiceImpl implements LevelService {
 
     @Override
     public int calculateUserLevel(Integer userId) {
-        List<FocusRecord> records = focusRecordRepository.findByUserId(userId);
+        List<FocusRecord> records = focusRecordRepository.findByUser_Id(userId);
         int totalSeconds = records.stream()
                 .mapToInt(FocusRecord::getFocusTime)
                 .sum();

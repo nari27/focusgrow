@@ -1,4 +1,10 @@
-export type PlantStage = 'seed' | 'sprout' | 'grow' | 'flower';
+export type PlantStage =
+  | 'stage-1'
+  | 'stage-2'
+  | 'stage-3'
+  | 'stage-4'
+  | 'stage-5'
+  | 'stage-6';
 
 type PlantAnimationProps = {
   stage: PlantStage;
@@ -8,26 +14,34 @@ export default function PlantAnimation({ stage }: PlantAnimationProps) {
   const getImageSrc = (stage: PlantStage) => `/plants/${stage}.png`;
   const getAltText = (stage: PlantStage) => {
     switch (stage) {
-      case 'seed':
+      case 'stage-1':
         return '씨앗';
-      case 'sprout':
+      case 'stage-2':
         return '새싹';
-      case 'grow':
+      case 'stage-3':
         return '줄기';
-      case 'flower':
+      case 'stage-4':
+        return '꽃';
+      case 'stage-5':
+        return '꽃';
+      case 'stage-6':
         return '꽃';
     }
   };
 
   const getSizeClass = (stage: PlantStage) => {
     switch (stage) {
-      case 'seed':
+      case 'stage-1':
         return 'w-24 h-24';
-      case 'sprout':
+      case 'stage-2':
         return 'w-28 h-28';
-      case 'grow':
+      case 'stage-3':
         return 'w-32 h-32';
-      case 'flower':
+      case 'stage-4':
+        return 'w-36 h-36';
+      case 'stage-5':
+        return 'w-36 h-36';
+      case 'stage-6':
         return 'w-36 h-36';
     }
   };

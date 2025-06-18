@@ -1,26 +1,30 @@
 .layout-wrapper {
   min-height: 100vh;
-  background-color: #fdf6ec;
+  background-color: #fff8e4;
   color: #2e4b27;
   display: flex;
   flex-direction: column;
 }
 
 .layout-header {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
+  justify-content: space-between; /* 좌우 끝 정렬 */
+  padding: 20px 20px;
   background-color: white;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   font-weight: 600;
 }
 
 .layout-header a {
-  margin-right: 1rem;
+  cursor: pointer;
   text-decoration: none;
   color: #2e4b27;
+  font-weight: 800;
+}
+
+.layout-header a:hover {
+  color: #5e843f; /* 마우스를 올렸을 때 색상 변경 */
 }
 
 .layout-header button {
@@ -28,11 +32,11 @@
   border: none;
   color: #d9534f;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 800;
+  font-size: 1rem;
 }
 
 .layout-main {
-  flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -43,4 +47,31 @@
   max-width: 700px;
   min-height: 100%;
   padding: 2rem 1rem;
+}
+
+.logo {
+  font-size: 2rem; /* 더 크게 하고 싶으면 2rem 이상으로 조절 가능 */
+  font-weight: bold;
+  color: rgb(15, 41, 16); /* 시안처럼 녹색 계열 강조 */
+  text-decoration: none;
+}
+
+.bar {
+  display: flex;
+  gap: 100px; /* 링크 사이 간격 */
+  font-size: 1.2rem;
+}
+
+.login {
+  display: flex;
+  gap: 30px;
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.login button {
+  display: flex;
+  gap: 30px;
+  font-size: 1.2rem;
+  margin-right: 10px;
 }

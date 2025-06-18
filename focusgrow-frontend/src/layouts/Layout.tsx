@@ -14,13 +14,18 @@ export default function Layout() {
   return (
     <div className="layout-wrapper">
       <header className="layout-header">
-        <div>
-          <Link to="/">홈</Link>
+        <Link to="/" className="logo">
+          FocusGrow
+        </Link>
+        <div className="bar">
+          {isLoggedIn && <Link to="/">홈</Link>}
           {isLoggedIn && <Link to="/timer">타이머</Link>}
+          {isLoggedIn && <Link to="">통계</Link>}
         </div>
-        <div>
+        <div className="login">
           {!isLoggedIn && <Link to="/login">로그인</Link>}
           {!isLoggedIn && <Link to="/register">회원가입</Link>}
+
           {isLoggedIn && <button onClick={handleLogout}>로그아웃</button>}
         </div>
       </header>

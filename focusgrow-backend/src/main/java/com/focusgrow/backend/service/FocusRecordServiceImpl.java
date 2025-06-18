@@ -68,6 +68,13 @@ public class FocusRecordServiceImpl implements FocusRecordService {
                 .collect(Collectors.toList());
     }
 
+    // 누적 집중 시간 조회
+    @Override
+    public int getTotalFocusTime(Integer userId) {
+        List<FocusRecord> records = focusRecordRepository.findByUser_Id(userId);
+        return records.stream().mapToInt(FocusRecord::getFocusTime).sum();
+    }
+    }
 //    // 집중 시간 통계 (주간/월간)
 //    @Override
 //    public Object getFocusStats(String period) {
@@ -79,4 +86,4 @@ public class FocusRecordServiceImpl implements FocusRecordService {
 //        }
 //        throw new IllegalArgumentException("Invalid period");
 //    }
-}
+

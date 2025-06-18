@@ -9,5 +9,6 @@ import java.util.List;
 public interface FocusRecordService {
     FocusLogResponse addFocusRecord(FocusLogRequest focusLogRequest);
     List<FocusLogResponse> getFocusRecordsByDate(LocalDate date);
+    int getTotalFocusTime(Integer userId); // ✅ 이 줄만 추가!
 //    Object getFocusStats(String period);
 }

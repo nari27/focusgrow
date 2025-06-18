@@ -25,6 +25,14 @@ public class FocusRecordController {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
+    // 누적 집중 시간 조회
+    @GetMapping("/total-time/{userId}")
+    public ResponseEntity<Integer> getTotalFocusTime(@PathVariable Integer userId) {
+        int total = focusRecordService.getTotalFocusTime(userId);
+        return new ResponseEntity<>(total, HttpStatus.OK);
+    }
+
+
     // 특정 날짜별 집중 기록 조회
     @GetMapping
     public ResponseEntity<List<FocusLogResponse>> getFocusRecordsByDate(@RequestParam LocalDate date) {
