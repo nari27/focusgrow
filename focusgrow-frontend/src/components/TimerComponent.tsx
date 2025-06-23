@@ -25,22 +25,28 @@ export default function TimerComponent() {
       const userId = sessionStorage.getItem('id');
       const plantId = 1;
 
+      const focusDurationSec = inputMinutes * 60 - seconds; //실제 경과 시간
+
       if (userId) {
-        saveFocusRecord(Number(userId), plantId, inputMinutes * 60).then(
-          async () => {
-            alert('집중 시간이 저장되었습니다.');
+        saveFocusRecord(
+          Number(userId),
+          plantId,
+          Math.floor(focusDurationSec / 60) // 분 단위로 변환
+        ).then(async () => {
+          alert('집중 시간이 저장되었습니다.');
 
-            const res = await axios.get(`/api/levels/user/${userId}`);
-            const level = res.data;
-            setUserLevel(level);
-            setTotalFocusTime((prev) => prev + inputMinutes * 60);
+          const res = await axios.get(`/api/levels/user/${userId}`);
+          const level = res.data;
+          setUserLevel(level);
+          setTotalFocusTime((prev) => prev + Math.floor(focusDurationSec / 60));
 
-            if (level === 1) setPlantStage('seed');
-            else if (level === 2) setPlantStage('sprout');
-            else if (level === 3) setPlantStage('grow');
-            else setPlantStage('flower');
-          }
-        );
+          if (level >= 6) setPlantStage('stage-6');
+          else if (level >= 5) setPlantStage('stage-5');
+          else if (level >= 4) setPlantStage('stage-4');
+          else if (level >= 3) setPlantStage('stage-3');
+          else if (level >= 2) setPlantStage('stage-2');
+          else setPlantStage('stage-1');
+        });
       }
     }
 

@@ -3,7 +3,6 @@ import { getUserLevel, getTotalFocusTime } from '../api/focusApi';
 import { Link } from 'react-router-dom';
 import '../styles/Home.css';
 
-// ✅ 여기!
 const formatTime = (minutes: number) => {
   const hours = Math.floor(minutes / 60);
   const mins = minutes % 60;
@@ -11,18 +10,18 @@ const formatTime = (minutes: number) => {
 };
 
 export default function Home() {
+  const userId = Number(sessionStorage.getItem('id'));
+
   const [level, setLevel] = useState<number>(1); //초기값은 1레벨
   const [plantImage, setPlantImage] = useState<string>('stage-1.png');
   const [totalFocusTime, setTotalFocusTime] = useState<number>(0);
 
   useEffect(() => {
-    const userId = Number(sessionStorage.getItem('id'));
     if (!userId) return;
 
     // 레벨 조회
     getUserLevel(userId).then((res) => {
       setLevel(res);
-
       if (res >= 6) setPlantImage('stage-6.png');
       else if (res >= 5) setPlantImage('stage-5.png');
       else if (res >= 4) setPlantImage('stage-4.png');
@@ -35,10 +34,63 @@ export default function Home() {
     getTotalFocusTime(userId).then((res) => {
       setTotalFocusTime(res); // res는 분 단위 숫자
     });
-  }, []);
+  }, [userId]);
 
+  // 로그인 안 한 경우
+  if (!userId) {
+    return (
+      <div className="home-guest-outer">
+        <h2 className="home-guest-title">
+          <span>집중할수록, 식물이 자라요</span>{' '}
+          <span className="sprout-emoji">🌱</span>
+        </h2>
+
+        <div className="home-guest-header">
+          <h2>⏳ 한 시간의 집중, 🌿 작은 기적</h2>
+          <p>
+            몰입하는 순간마다
+            <br />
+            당신의 식물이 자라납니다.
+          </p>
+        </div>
+
+        <div className="guest-image">
+          <img src="/plants/guest.png" alt="guest" />
+        </div>
+
+        <div className="home-guest-features">
+          <div>
+            <img src="timer.svg" className="icon" />
+            <span>집중 타이머</span>
+            <p>방해받지 않는 몰입 환경</p>
+          </div>
+          <div>
+            <img src="/plant.svg" className="icon" />
+            <span>식물 성장 시각화</span>
+            <p>누적 시간만큼 식물이 쑥쑥!</p>
+          </div>
+          <div>
+            <img src="chart.svg" className="icon" />
+            <span>주간/월간 통계</span>
+            <p>나의 집중 패턴을 한눈에</p>
+          </div>
+        </div>
+
+        <div className="home-guest-cta-area">
+          <Link to="/login" className="start-button">
+            🌱 지금 시작하기
+          </Link>
+          <p className="join-ment">
+            아직 회원이 아니라면 <Link to="/register">회원가입</Link>
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // 로그인 한 경우 기존 화면
   return (
-    <div>
+    <div className="home-guest-outer">
       <h2 className="main-title">집중할수록, 식물이 자라요 🌱</h2>
 
       <div className="status-cards">

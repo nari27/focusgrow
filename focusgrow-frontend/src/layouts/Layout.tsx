@@ -21,6 +21,9 @@ export default function Layout() {
           {isLoggedIn && <Link to="/">홈</Link>}
           {isLoggedIn && <Link to="/timer">타이머</Link>}
           {isLoggedIn && <Link to="">통계</Link>}
+          {!isLoggedIn && <Link to="/">홈</Link>}
+          {!isLoggedIn && <Link to="/timer">타이머</Link>}
+          {!isLoggedIn && <Link to="">통계</Link>}
         </div>
         <div className="login">
           {!isLoggedIn && <Link to="/login">로그인</Link>}
