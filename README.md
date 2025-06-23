@@ -32,7 +32,7 @@ FocusGrow는 "Focus(집중)"와 "Grow(성장)"을 결합한 이름으로, 사용
 
 ### Frontend
 
-- React (Vite 기반 프로젝트 세팅)
+- React (Vite 기반)
 
 - TypeScript
 
@@ -40,7 +40,7 @@ FocusGrow는 "Focus(집중)"와 "Grow(성장)"을 결합한 이름으로, 사용
 
 - Axios (API 통신)
 
-- Tailwind CSS (스타일링)
+- CSS / CSS Modules (스타일링)
 
 
 ### Backend
