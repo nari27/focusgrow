@@ -8,7 +8,8 @@ FocusGrow는 "Focus(집중)"와 "Grow(성장)"을 결합한 이름으로, 사용
 
 ---
 ## FocusGrow 메인 화면
-![스크린샷 2025-06-23 오후 5 01 08](https://github.com/user-attachments/assets/fa904ae3-fe06-4be2-a757-0d92b8e00421)
+![스크린샷 2025-06-23 오후 5 06 56](https://github.com/user-attachments/assets/33f1190d-acfd-43e6-bc80-af71086efedb)
+
 ---
 
 ## 주요 기능
