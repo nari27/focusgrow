@@ -14,9 +14,12 @@ FocusGrow는 사용자의 집중 시간을 시각적으로 피드백하고,
 
 사용자가 꾸준히 집중 습관을 형성할 수 있도록 설계했습니다.
 
+<br>
+
 ## FocusGrow 메인 화면
 ![스크린샷 2025-06-23 오후 5 28 19](https://github.com/user-attachments/assets/89cffbc0-e309-49c3-93e2-ae4642349552)
 
+<br>
 
 ## 🔑 주요 기능
 
