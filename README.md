@@ -1,13 +1,16 @@
 # 🌱 FocusGrow (구현중)
-> **React + Spring Boot / 몰입 시각화 / 성장 피드백 / 레벨·배지 시스템**
+**“몰입 시간 = 성장”을 시각적으로 보여주는 집중 습관 강화 앱**  
+> React + Spring Boot · 시각화 기반 집중 피드백 · 레벨 & 배지 시스템
 
-- 집중 시간 기록 → 식물 성장 애니메이션 제공  
-- 레벨·배지 시스템, 주간 통계 시각화까지!
+### 🎯 FocusGrow란?
 
-### **FocusGrow**는 집중 시간 동안 식물이 자라는 **게이미피케이션 요소**를 접목한  
-### **집중 습관 유도형 웹 애플리케이션**입니다.  
-### 사용자가 설정한 시간 동안 집중할수록 식물이 성장하고 레벨이 오르며,  
-### **시각적 피드백과 통계 분석을 통해 몰입 경험을 강화**할 수 있습니다.
+**FocusGrow**는 집중 시간 동안 식물이 자라는 **게이미피케이션 기반 웹 앱**입니다.  
+사용자가 설정한 시간 동안 집중하면, 식물이 성장하고 레벨이 오르며  
+**몰입 피드백 + 배지 시스템 + 집중 통계 시각화**까지 제공합니다.
+
+- 집중 = 성장!  
+- 시각적 피드백으로 몰입 유도  
+- 꾸준한 집중 습관 형성에 도움
 ---
 ## FocusGrow 메인 화면
 ![스크린샷 2025-06-23 오후 5 28 19](https://github.com/user-attachments/assets/89cffbc0-e309-49c3-93e2-ae4642349552)
@@ -37,22 +40,22 @@
 
 - TypeScript
 
-- React Query (서버 상태 관리)
+- React Query 
 
-- Axios (API 통신)
+- Axios 
 
-- CSS / CSS Modules (스타일링)
+- CSS / CSS Modules
 
 
 ### Backend
 
 - Spring Boot (Kotlin 기반)
 
-- JPA (Hibernate) (ORM)
+- JPA (Hibernate) 
 
-- MySQL (RDBMS)
+- MySQL 
 
-- JWT (로그인 인증)
+- Session 기반 로그인 인증
 
 <br>
 
