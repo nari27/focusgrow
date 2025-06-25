@@ -9,15 +9,19 @@ export default function Login() {
   const [password, setPassword] = useState('');
 
   const handleLogin = async () => {
-    console.log('로그인 시도');
+    if (!email || !password) {
+      alert('이메일과 비밀번호를 모두 입력해주세요.');
+      return;
+    }
+
     try {
-      const response = await login(email, password); // ⬅️ 로그인 요청 및 응답 받기
+      const response = await login(email, password); // ⬅ 로그인 요청 및 응답 받기
       console.log(response.data);
 
-      // ✅ 응답에서 유저 정보 꺼내기
+      // 응답에서 유저 정보 꺼내기
       const { id, username, email: userEmail } = response.data;
 
-      // ✅ 세션 스토리지에 저장 (로그인 상태 유지 목적)
+      // 세션 스토리지에 저장 (로그인 상태 유지 목적)
       sessionStorage.setItem('id', id.toString());
       sessionStorage.setItem('username', username);
       sessionStorage.setItem('email', userEmail);
@@ -36,12 +40,12 @@ export default function Login() {
       <h2 className={styles.heading}>로그인</h2>
       <input
         type="email"
-        name="email" // ✅ name 속성 추가!
+        name="email" // name 속성 추가!
         placeholder="이메일"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         className={styles.input}
-        autoComplete="email" // ✅ 브라우저 자동완성 유도
+        autoComplete="email" // 브라우저 자동완성 유도
       />
 
       <input

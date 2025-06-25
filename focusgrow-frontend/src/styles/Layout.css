@@ -26,14 +26,17 @@
 .layout-header a:hover {
   color: #637356; /* 마우스를 올렸을 때 색상 변경 */
 }
+.layout-header button:hover {
+  color: #637356; /* 마우스를 올렸을 때 색상 변경 */
+}
 
 .layout-header button {
   background: none;
   border: none;
-  color: #d9534f;
+  color: #2e4b27;
   cursor: pointer;
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .layout-main {
@@ -50,8 +53,9 @@
 }
 
 .logo {
-  font-size: 2rem; /* 더 크게 하고 싶으면 2rem 이상으로 조절 가능 */
+  font-size: 2rem;
   font-weight: bold;
+  color: rgb(15, 41, 16);
   text-decoration: none;
 }
 

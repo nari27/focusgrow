@@ -3,7 +3,6 @@ package com.focusgrow.backend.service;
 import com.focusgrow.backend.dto.*;
 import com.focusgrow.backend.entity.User;
 import com.focusgrow.backend.repository.UserRepository;
-import com.focusgrow.backend.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import com.focusgrow.backend.exception.ConflictException;
@@ -32,8 +31,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserResponse login(UserRequest request) {
         User user = userRepository.findByEmail(request.getEmail())
-                .orElseThrow(() -> new RuntimeException("User not found"));
-        // 실제로는 비밀번호 검증 필요
+                .orElseThrow(() -> new RuntimeException("이메일이 존재하지 않습니다."));
+
+// ⚠️ 여기서 비교가 제대로 안되면, 그냥 통과됨
+        if (!user.getPassword().equals(request.getPassword())) {
+            throw new RuntimeException("비밀번호가 일치하지 않습니다.");
+        }
         return toResponse(user);
     }
 
